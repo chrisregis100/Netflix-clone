@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gift-session {
+  background: rgb(255,153,0);
+  background: radial-gradient(circle, rgba(255,153,0,1) 0%, rgba(229,9,20,1) 5%, rgba(14,27,79,1) 42%, rgba(0,4,19,1) 65%);
+}
+
+footer a{
+  @apply underline
+}
