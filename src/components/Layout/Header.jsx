@@ -14,7 +14,12 @@ function Header() {
           <option value="espagnol">espagnol</option>
           <option value="francais">francais</option>
         </select>
-        <button className="bg-secondary-red-300 hover:bg-secondary-red-200   text-lg px-4 py-2 rounded-md  text-primary ">
+        <button
+          className="bg-secondary-red-300 hover:bg-secondary-red-200   text-lg px-4 py-2 rounded-md  text-primary"
+          onClick={() => {
+            window.location.href = "/authentification";
+          }}
+        >
           Sign In
         </button>
       </div>
