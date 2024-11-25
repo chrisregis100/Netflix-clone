@@ -1,16 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import Home from "./Pages/LandingPage";
+import HomeLanding from "./Pages/LandingPage";
 import Authentification from "./Pages/Authentification";
 import Inscription from "./Pages/Inscription";
 import Comfirmation from "./Pages/Comfirmation";
 import { Toaster } from "react-hot-toast";
+import Home from "./Pages/Home";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <HomeLanding />,
     },
     {
       path: "/authentification",
@@ -23,6 +24,10 @@ function App() {
     {
       path: "/confirmation/:token",
       element: <Comfirmation />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
     },
   ]);
 

@@ -23,3 +23,7 @@ footer a {
   @apply underline;
 }
 
+.nav a {
+  @apply text-primary/70 hover:text-primary;
+}
+

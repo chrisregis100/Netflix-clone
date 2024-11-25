@@ -2,7 +2,7 @@ import Footer from "../components/Layout/Footer";
 import Hero from "../components/Layout/Hero";
 import Landing from "../components/Layout/Landing";
 
-function Home() {
+function HomeLanding() {
   return (
     <>
       <div>
@@ -16,4 +16,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeLanding;

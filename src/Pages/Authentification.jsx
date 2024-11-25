@@ -2,11 +2,14 @@ import { useState } from "react";
 import authImage from "../assets/auth-image.png";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Authentification() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,12 +24,14 @@ function Authentification() {
         password,
       }),
     });
+    const data = await response.json();
+
     if (response.ok) {
-      const data = await response.json();
       console.log(data);
       toast.success("Connexion réussie");
+      navigate("/home");
     } else {
-      toast.error("Erreur de connexion");
+      toast.error(data.message);
     }
   };
 

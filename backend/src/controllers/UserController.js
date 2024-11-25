@@ -10,7 +10,7 @@ module.exports.SignIn = async (req, res) => {
     try {
         const user = await User.findOne({email});
         if(!user) {
-            return res.status(400).json({message: "User not found"});
+            return res.status(400).json({message: "User not found please sign up"});
         }
 
         const ismatch = await bcrypt.compare(password, user.password);

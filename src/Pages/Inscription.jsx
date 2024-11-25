@@ -1,12 +1,12 @@
 import { useState } from "react";
 import authImage from "../assets/auth-image.png";
 import Button from "../components/ui/Button";
+import toast from "react-hot-toast";
 
 function Inscription() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [userCreated, setUserCreated] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,10 +25,12 @@ function Inscription() {
         password,
       }),
     });
+    const data = await response.json();
     if (response.ok) {
-      const data = await response.json();
       console.log(data);
-      setUserCreated(true);
+      toast.success(data.message);
+    } else {
+      toast.error(data.message);
     }
   };
 
@@ -38,12 +40,6 @@ function Inscription() {
       style={{ backgroundImage: `url(${authImage})` }}
     >
       <div className="flex flex-col items-center justify-center gap-5 mt-10 mx-auto bg-primary-dark/50 w-[450px] h-[710px]   ">
-        {userCreated && (
-          <p className="text-2xl mt-6  h-20 px-3 w-full text-center bg-[#0e630b] rounded-md">
-            Your account has been created. Please check your email to confirm
-            your account.
-          </p>
-        )}
         <h1 className="text-4xl font-bold py-4">Sign Up</h1>
 
         <form action="" className="flex flex-col gap-8" onSubmit={handleSubmit}>
