@@ -27,10 +27,6 @@ app.use(
   );
 app.use("/api", UserRouter);
 
-  app.get("/", (req, res) => {
-    res.send("Hello World");
-  });
-
 app.listen(port, ()=>{
  console.log(`le server  a demarré au port ${port}`})
 )
