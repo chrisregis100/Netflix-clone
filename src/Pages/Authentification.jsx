@@ -14,7 +14,7 @@ function Authentification() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password, rememberMe);
-    const response = await fetch("http://localhost:5000/api/signin", {
+    const response = await fetch("https://backend-pink-six.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
