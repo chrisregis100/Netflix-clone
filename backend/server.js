@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: "https://backend-pink-six.vercel.app/",
       methods: ["GET", "POST", "PUT", "DELETE"],
       allowedHeaders: ["Content-Type", "Authorization"],
       optionsSuccessStatus:200,
@@ -28,10 +28,5 @@ app.use(
 
   app.use("/api", UserRouter);
 
-  app.get("/", (req, res) => {
-    res.send("Hello World");
-  });
-app.listen(port, ()=>{
-
-  console.log(`le server  a demarré au port ${port}`)}
+app.listen(port, ()=>console.log(`le server  a demarré au port ${port}`)
 )

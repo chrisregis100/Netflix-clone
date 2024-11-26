@@ -26,7 +26,7 @@ function App() {
       element: <Comfirmation />,
     },
     {
-      path: "/home",
+      path: "https:/home",
       element: <Home />,
     },
   ]);
