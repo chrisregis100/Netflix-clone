@@ -19,7 +19,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
-      origin: "https://backend-pink-six.vercel.app/",
+      origin: [
+        "https://backend-pink-six.vercel.app", // Front-end déployé
+        "http://localhost:5173", // Pour le développement local
+    ],
       methods: ["GET", "POST", "PUT", "DELETE"],
       allowedHeaders: ["Content-Type", "Authorization"],
       optionsSuccessStatus:200,

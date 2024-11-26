@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-binary-expression */
 import { useState } from "react";
 import authImage from "../assets/auth-image.png";
 import Button from "../components/ui/Button";
@@ -5,6 +6,10 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 function Authentification() {
+  const url =
+    "https://backend-gga5x6wzt-chris-regis-projects.vercel.app" ||
+    "http://localhost:5000";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -14,7 +19,7 @@ function Authentification() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password, rememberMe);
-    const response = await fetch("https://backend-pink-six.vercel.app/", {
+    const response = await fetch(`${url}/api/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
