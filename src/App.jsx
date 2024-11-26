@@ -14,19 +14,19 @@ function App() {
       element: <HomeLanding />,
     },
     {
-      path: "https://netflix-clone-sage.vercel.app/authentification",
+      path: "/authentification",
       element: <Authentification />,
     },
     {
-      path: "https://netflix-clone-sage.vercel.app/Inscription",
+      path: "/Inscription",
       element: <Inscription />,
     },
     {
-      path: "https://netflix-clone-sage.vercel.app/confirmation/:token",
+      path: "/confirmation/:token",
       element: <Comfirmation />,
     },
     {
-      path: "https://netflix-clone-sage.vercel.app/home",
+      path: "https:/home",
       element: <Home />,
     },
   ]);
